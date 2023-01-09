@@ -93,7 +93,7 @@ public class Main {
 
     }
 
-    
+
 
     public static void calculate(int num1, int num2){
         System.out.println(num1 +" + "+num2 +"="+num1+num2);
@@ -116,7 +116,7 @@ public class Main {
         if (n1 >= n2 && n1 >= n3){
             greatestNumber = n1;
         }else if(n2 >= n1 && n2 >= n3){
-//         greatestNumber = n2;
+            greatestNumber = n2;
         } else {
             greatestNumber=n3;
         }
@@ -126,7 +126,6 @@ public class Main {
     public static String getDay (int number)
     {
         String day="";
-//        if(number <=7 && number >= 1){
             switch (number){
                 case 1: return "Sunday";
                 case 2: return "Monday";
@@ -136,7 +135,6 @@ public class Main {
                 case 6: return "Friday";
                 case 7: return "Saturday";
             }
-//        }
         return "";
 
     }
