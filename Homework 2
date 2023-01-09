@@ -1,1 +1,146 @@
 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+//        //Ex1
+//        System.out.println("Enter first number");
+//        int num1 = scanner.nextInt();
+//        System.out.println("Enter second number");
+//        int num2 = scanner.nextInt();
+//        calculate(num1,num2);
+//
+       //=================================
+//
+//        //Ex2
+//        System.out.println("Enter String");
+//        String lowerCase1 = scanner.nextLine();
+//        System.out.println(lowerCase1.toLowerCase());
+//
+//
+//        //=================================
+//
+//        //Ex3
+//        System.out.println("Enter String to reverse");
+//        String revers = scanner.nextLine();
+//        StringBuffer test = new StringBuffer(revers);
+//        test.reverse();
+//        System.out.println(test);
+//
+        //================================
+//
+//        //Ex4
+//        System.out.println("enter number");
+//        int check = scanner.nextInt();
+//
+//        if(check % 2 == 0){
+//            System.out.println(check +" = "+ "0");
+//        }else {
+//            System.out.println(check +" = "+ "1");
+//        }
+//
+        //===============================
+//
+//        //EX5
+//        System.out.println("Enter your role");
+//        String role = scanner.nextLine();
+//
+//        if(role.equals("admin")){
+//            System.out.println("welcome admin");
+//        }else if(role.equals("superuser")){
+//            System.out.println("welcome superuser");
+//        }else if (role.equals("user")){
+//            System.out.println("welcome user");
+//        }
+
+
+
+        //=================================
+
+        //Ex6
+//        System.out.println("Enter first number");
+//        int n1 = scanner.nextInt();
+//        System.out.println("Enter second number");
+//        int n2 = scanner.nextInt();
+//        System.out.println("Enter third number");
+//        int n3 = scanner.nextInt();
+//        System.out.println(compare(n1,n2,n3));
+
+        //=================================
+
+        //EX7
+
+
+//        System.out.println("Enter first number");
+//        int nu1 = scanner.nextInt();
+//        System.out.println("Enter second number");
+//        int nu2 = scanner.nextInt();
+//        System.out.println("Enter third number");
+//        int nu3 = scanner.nextInt();
+//        System.out.println("Greatest Number is: "+ greatestNumber(nu1,nu2,nu3));
+
+
+
+        //=====================================
+
+        //Ex8
+//        System.out.println("Enter number");
+//        int numberofday = scanner.nextInt();
+//        System.out.println(getDay(numberofday));
+
+
+    }
+
+    
+
+    public static void calculate(int num1, int num2){
+        System.out.println(num1 +" + "+num2 +"="+num1+num2);
+        System.out.println(num1 +" - "+num2 +"="+(num1-num2));
+        System.out.println(num1 +" * "+num2 +"="+num1*num2);
+        System.out.println(num1 +" / "+num2 +"="+num1/num2);
+        System.out.println(num1 +" mod "+num2 +"="+num1%num2);
+    }
+
+    public static Boolean compare(int n1, int n2, int n3){
+
+        if ((n1+n2) == n3){
+            return true;
+        }
+        return false;
+    }
+
+    public static int greatestNumber(int n1,int n2, int n3){
+        int greatestNumber = 0;
+        if (n1 >= n2 && n1 >= n3){
+            greatestNumber = n1;
+        }else if(n2 >= n1 && n2 >= n3){
+//         greatestNumber = n2;
+        } else {
+            greatestNumber=n3;
+        }
+        return greatestNumber;
+    }
+
+    public static String getDay (int number)
+    {
+        String day="";
+//        if(number <=7 && number >= 1){
+            switch (number){
+                case 1: return "Sunday";
+                case 2: return "Monday";
+                case 3: return "Tuesday";
+                case 4: return "Wednesday";
+                case 5: return "Thursday";
+                case 6: return "Friday";
+                case 7: return "Saturday";
+            }
+//        }
+        return "";
+
+    }
+
+
+
+}
