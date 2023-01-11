@@ -1,0 +1,185 @@
+import java.util.Scanner;
+
+public class Test {
+
+    public static void main(String[] args){
+//
+        Scanner s = new Scanner(System.in);
+ //       //Ex1//
+//
+//
+//
+        for(int i = 0 ; i<=100; i++){
+            if (i%3==0){
+                System.out.println("Fizz");
+            }else if(i % 5 == 0){
+                System.out.println("Buzz");
+            }
+            else if(i%3==0 && i % 5 == 0 ){
+                System.out.println("FizzBuzz");
+            }
+        }
+//        //====================================
+//
+//        //Ex2
+//        String reverse = "The quick brown fox Expected Output";
+//        StringBuffer sBuffer = new StringBuffer(reverse);
+//        System.out.println(sBuffer.reverse());
+//        //======================================
+//
+//        //Ex3
+//        System.out.println("enter postive number");
+//        int multibleTable = s.nextInt();
+//
+//        if (multibleTable >0){
+//            for(int i = 0; i<=multibleTable; i++){
+//                if (i == multibleTable){
+//                    for(int j =0; j<=10 ; j++){
+//                        System.out.println(j+"*"+""+i+"="+i*j);
+//                    }
+//                }
+//
+//            }
+//        }
+
+//
+//        //===================================
+//
+//        //Ex4
+//
+//        System.out.println("Enter number to calaculate Factorial ");
+//        int factorial = s.nextInt();
+//        int calc= 1;
+//        for( int i = 1; i<=factorial; i++){
+//            calc *=i;
+//        }
+//        System.out.println(calc);
+//
+//        //========================================
+//
+//        //Ex5 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//        System.out.println("Enter number");
+//        int number=s.nextInt();
+//        System.out.println("Enter power");
+//        int power=s.nextInt();
+//        int result=number;
+//
+//
+//        for (int i=1; i<power ; i++){
+//           result = (number * result);
+//        }
+//        System.out.println(result);
+//
+//
+//
+//
+
+//        //============================================
+//
+//       //Ex6
+//        System.out.println("enter number");
+//        int enterNum= 10;
+//                //s.nextInt();
+//        int sumOdd=0;
+//        int sumEven=0;
+//
+//        for (int i = 0; i<=enterNum; i++){
+//            if(i % 2 == 0){
+//                sumEven+=i;
+//            }else {
+//                sumOdd+=i;
+//            }
+//        }
+//        System.out.println("Even is: "+ sumEven+ "\nodd is: "+ sumOdd);
+//
+//
+//        //==============================================
+//        //Ex7 not clear
+//        boolean con =true ;
+//        String asnswre = "t";
+//        while (con == true){
+//
+//
+//            if (asnswre.equalsIgnoreCase("F")){
+//                con = false;
+//            }else if(asnswre.equalsIgnoreCase("T")){
+//                System.out.println("enter number");
+//                int n = s.nextInt();
+//                for (int i =2; i<= n; i++){
+//                    if(n%2 != 0 && n%3 !=0 ){
+//                        System.out.println(n+": is a prime number ");
+//                        break;
+//                    }else {
+//                        System.out.println(n+" is not a prime");
+//                        break;
+//                    }
+//                }
+//            }
+//            System.out.println("continue? T / F ");
+//             asnswre = s.nextLine();
+//        }
+//
+//
+
+
+
+//        //==============================================
+//        //Ex8
+//
+//        boolean test = true;
+//        int countPostive= 0;
+//        int countNegtive= 0;
+//        int countzeroz= 0;
+//        while (test == true){
+//
+//            System.out.println("enter number && if you want to end loop writ 1919");
+//            int number = s.nextInt();
+//            if (number == 1919){
+//                test = false;
+//                //break;
+//            }
+//             else if (number > 0){
+//                countPostive++;
+//            }else if(number <0){
+//                countNegtive++;
+//            }else if(number == 0){
+//                countzeroz++;
+//            }
+//        }
+//
+//        System.out.println("postive is: "+ countPostive);
+//        System.out.println("negitive is: "+ countNegtive);
+//        System.out.println("zero is: "+ countzeroz);
+//
+//
+//
+//       //========================================================//
+//       //Ex9
+//        for(int i =1 ; i<=4 ; i++){
+//            System.out.println("Week "+i);
+//            for (int j = 1 ; j<= 7; j++){
+//                System.out.println("Day "+j);
+//            }
+//        }
+//
+//
+//        //=====================================================
+////        Ex10
+//
+//        System.out.println("Enter word ");
+//        String pal ="";
+//        pal=s.nextLine();
+//        String  reverse= "";
+//        int leng= pal.length();
+//
+//
+//        for(int i = leng -1 ; i>=0 ;i--){
+//            reverse = reverse + pal.charAt(i);
+//        }
+//        if (pal.equals(reverse)){
+//            System.out.println("palindrome ");
+//        }else {
+//            System.out.println("not palindrome ");
+//        }
+   }
+}
