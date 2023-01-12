@@ -1,0 +1,270 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+@SuppressWarnings("SpellCheckingInspection")
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+
+//
+//        int [] list2 =new int[] {1,3,4,5,6,2};
+//        int n;
+//
+//        for (int i = 0 ; i<list2.length ; i++){
+//            for (int j=i+1; j<list2.length; j++){
+//
+//                int x =0;
+//                if(list2[i] > list2[j]){
+//                    x = list2[i];
+//                    list2[i]=list2[j];
+//                    list2[j]=x;
+//
+//                }
+//
+//            }
+//        }
+//
+//        System.out.println(list2[1]);
+
+//        //=============================================
+//  //      EX1
+//        int [] test = {50, -20, 0, 30, 40, 60, 51};
+//
+//        //System.out.println(test.length -1);
+//        for (int i=0; i<test.length; i++){
+//            if(test[0] == test[test.length-1]){
+//                System.out.println("true");
+//                break;
+//            }else {
+//                System.out.println("false");
+//                break;
+//            }
+//        }
+
+////        =========================================================
+//   //     EX2
+//        int [] largeElment = {1, 4, 17, 7, 25, 3, 100};
+//        ArrayList<Integer> list = new ArrayList();
+//        for (int i = 0; i<largeElment.length ; i++){
+//
+//            for (int j= i+1; j<largeElment.length ; j++){
+//                int temp = 0;
+//                if(largeElment[i] < largeElment[j]){
+//                    temp = largeElment[i];
+//                    largeElment[i]= largeElment[j];
+//                    largeElment[j]=temp;
+//                }
+//
+//            }
+//           // System.out.println(largeElment[i]);
+//
+//            if(i<=2){
+//                list.add(largeElment[i]);
+//            }
+//        }
+//        System.out.print("3 largest elements of the said array are:"+list);
+
+////        ====================================================================
+//   //     EX3
+//        int avg = 0 ;
+//        int sum = 0;
+//        int [] avgArray = {1, 4, 17, 7, 25, 3, 100};
+//
+//        for (int i = 0 ; i < avgArray.length ; i++){
+//            sum+=avgArray[i];
+//        }
+//        //System.out.println(sum);
+//        avg=sum/avgArray.length;
+//        //System.out.print("The average of the said array is: "+avg);
+//
+//        ArrayList<Integer> list = new ArrayList();
+//        for (int i = 0; i<avgArray.length; i++){
+//            if(avg<avgArray[i]){
+//                list.add(avgArray[i]);
+//            }
+//
+//        }
+//        System.out.println("The average of the said array is: "+avg+" The numbers in the said array that are greater than the average are: "+list);
+
+////================================================================================
+//   //     Ex4
+//        int [] compare = {60, 30, 40,50};
+//
+//        for (int i = 0 ; i<compare.length; i++){
+//            if(compare[0]> compare[compare.length-1]){
+//                System.out.println("Larger value between first and last element: "+ compare[0]);
+//                break;
+//            }else {
+//                System.out.println("Larger value between first and last element: "+ compare[compare.length-1]);
+//                break;
+//            }
+//        }
+
+// //        ==========================================================
+//     //   Ex5
+//        int [] swapArray = {20, 30, 40,60};
+//        for (int i=0; i<swapArray.length; i++){
+//            int temp= swapArray[0];
+//
+//                swapArray[0]= swapArray[swapArray.length-1];
+//                // System.out.println(swapArray[0]);
+//                swapArray[swapArray.length-1]=temp;
+//                // System.out.println(swapArray[swapArray.length-1]);
+//                break;
+//
+//
+//        }
+//System.out.print("New array after swapping the first and last elements: ");
+//        for (int i : swapArray){
+//            System.out.print(i+",");
+//        }
+
+//  //      ===========================================================
+//  //      Ex6
+//        String[] words = { "ali","cat", "dog", "red", "is", "am" };
+//        int largeWordsize = 0;
+//        ArrayList<String> save =  new ArrayList<>();
+//        for(int i = 0; i<words.length; i++){
+//            for (int j= i+1; j<words.length; j++){
+//                String largest ="";
+//
+//                if(words[i].length()  <= words[j].length()){
+//                    largest =words[i];
+//                    words[i]=words[j];
+//                    words[j]=largest;
+//                }
+//
+//            }
+//
+//            largeWordsize=words[0].length();
+//            if(words[i].length() == largeWordsize){
+//                System.out.println(words[i]);
+//            }
+//        }
+
+
+////================================================================
+     //   //EX7
+//        boolean start = true;
+//        int selectnum = 0;
+//        int arraySize = 0;
+//        String ss = "";
+//
+//        System.out.println("Enter Array size");
+//        arraySize = s.nextInt();
+//        //ArrayList<Integer>array=new ArrayList<Integer>();
+//        int[] array = new int[arraySize];
+//        while (start) {
+//
+//
+//            System.out.println("select number:\n 1: feed your arry\n 2: print array\n 3: search in your arry\n 4: close");
+//            selectnum = s.nextInt();
+//            if (selectnum == 1) {
+//                //add number to array
+//                for (int i = 0; i < arraySize; i++) {
+//                    System.out.println("Enter numbers to add it in array");
+//                    int enter = s.nextInt();
+//                    array[i] = enter;
+//                }
+//            } else if (selectnum == 2) {
+//                // print;
+//                System.out.print("your array: ");
+//                for (int i : array) {
+//                    System.out.print(i);
+//                }
+//                System.out.println();
+//            } else if (selectnum == 3) {
+//                //search
+//                System.out.println("serch by enter number");
+//                int num = s.nextInt();
+//                //String ss = "";
+//                for (int a = 0; a < array.length; a++) {
+//
+//                    if (num == array[a]) {
+//
+//                        ss = "it's exist:" + array[a];
+//                        break;
+//                    } else {
+//                        ss = "not exist";
+//                    }
+//
+//                }
+//                System.out.println(ss);
+//
+//            } else if (selectnum == 4) {
+//                break;
+//            }
+//        }
+//      //  ======================================================
+
+//    //    Ex8
+//        int[] list = {1, 5, 4, 1, 1, 3, 9, 4, 11, 51};
+//        while (true) {
+//            System.out.println("==============================\n To continue app write 0\n To close app write -1");
+//            int close = s.nextInt();
+//            System.out.println("==============================\n\n");
+//
+//            if (close == -1) {
+//                System.out.println("):");
+//                break;
+//            }
+//            System.out.println("enter number");
+//            int num = s.nextInt();
+//            int count = 0;
+//            int saver = 0;
+//            for (int i : list) {
+//
+//
+//                if (i == num) {
+//                    count++;
+//                    saver = i;
+//
+//                } else {
+//                    continue;
+//                }
+//            }
+//            System.out.println(saver + " occurs " + count + " times\n\n");
+//        }
+//
+
+//   //     ======================================================
+
+//   //     Ex9
+//        int[] largeElment = {1, 5, 4,7,12, 3, 9, 6, 11,55};
+//        ArrayList<Integer> list = new ArrayList();
+//        for (int i = 0; i < largeElment.length; i++) {
+//
+//            for (int j = i + 1; j < largeElment.length; j++) {
+//                int temp = 0;
+//                if (largeElment[j] % 2 == 1) {
+//                    temp = largeElment[i];
+//                    largeElment[i] = largeElment[j];
+//                    largeElment[j] = temp;
+//                }
+//            }
+//
+//            list.add(largeElment[i]);
+//        }
+//        System.out.print(list);
+
+
+//        ======================================================
+
+  //      Ex10
+
+        int arr1[] = { 1, 2, 3 };
+        int arr2[] = { 1, 2, 4 };
+
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("true");
+        }else {
+            System.out.println("false");
+        }
+
+
+
+//--------------------------------------------------------------------
+    }
+}
