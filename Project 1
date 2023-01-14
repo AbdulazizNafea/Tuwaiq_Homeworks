@@ -1,0 +1,223 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static String[][] iniGame = setEmptyList();
+    public static Scanner s = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        getStartGame();
+    }
+
+    public static void getStartGame(){
+        System.out.println(" 7 | 8 | 9 ");
+        System.out.println(" 4 | 5 | 6 ");
+        System.out.println(" 1 | 2 | 3 ");
+        System.out.println("###########");
+        for (int i = 1; i <5 ;i++){
+            if (!getCheckPlayerWin()) {
+                setO();
+                pint_bord();
+                if (getCheckPlayerWin()) {
+                    System.out.println("Game Over Player X");
+                    break;
+                }
+                setX();
+                pint_bord();
+                if (getCheckPlayerWin()) {
+                    System.out.println("Game Over Boot");
+                    break;
+                }
+            }
+        }
+        if (!getCheckPlayerWin()){
+            System.out.println("Draw");
+        }
+    }
+
+
+    public static String[][] setEmptyList() {
+        String[][] list = new String[3][3];
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list.length; j++) {
+                list[i][j] = "+";
+            }
+        }
+        return list;
+    }
+/*
+StringBuilder sb = new StringBuilder();
+str = sb.append(str1).append(str2).append(str3).toString();
+ */
+    public static void pint_bord() {
+        String[][] list = iniGame;
+        for (int i = 0; i < list.length; i++) {
+            StringBuilder plus =new StringBuilder();
+            String x ;
+            for (int j = 0; j < list.length; j++) {
+                System.out.print(list[i][j]);
+                if (j == 0 || j == 1) {
+                    System.out.print(" | ");
+                }
+                x = list[i][j];
+                plus = new StringBuilder(plus.append(x).append(plus).toString());
+                if (i == 0 && j == 2) {
+                    System.out.print("\n‾‾‾‾‾‾‾‾‾\n");
+                } else if (i == 1 && j == 2) {
+                    System.out.print("\n‾‾‾‾‾‾‾‾‾\n");
+                }
+            }
+        }
+        System.out.println("\n⫼⫼⫼⫼⫼⫼⫼⫼⫼⫼⫼\n");
+    }
+
+    public static String[][] setO() {
+        Random random = new Random();
+       // System.out.println("O Turn\n");
+        while (true) {
+            int place = random.nextInt(9);
+            //int place = s.nextInt();
+            if (place == 7 && iniGame[0][0].equals("+")) {
+                iniGame[0][0] = "o";
+                break;
+            } else if (place == 8 && iniGame[0][1].equals("+")) {
+                iniGame[0][1] = "o";
+                break;
+            } else if (place == 9 && iniGame[0][2].equals("+")) {
+                iniGame[0][2] = "x";
+                break;
+            } else if (place == 4 && iniGame[1][0].equals("+")) {
+                iniGame[1][0] = "o";
+                break;
+            } else if (place == 5 && iniGame[1][1].equals("+")) {
+                iniGame[1][1] = "o";
+                break;
+            } else if (place == 6 && iniGame[1][2].equals("+")) {
+                iniGame[1][2] = "o";
+                break;
+            } else if (place == 1 && iniGame[2][0].equals("+")) {
+                iniGame[2][0] = "o";
+                break;
+            } else if (place == 2 && iniGame[2][1].equals("+")) {
+                iniGame[2][1] = "o";
+                break;
+            } else if (place == 3 && iniGame[2][2].equals("+")) {
+                iniGame[2][2] = "o";
+                break;
+            }
+        }
+        return iniGame;
+    }
+
+    public static String[][] setX() {
+        System.out.println("Your turn");
+        System.out.println("chose number to play\n");
+        while (true) {
+            int place = s.nextInt();
+            if (place == 7 && iniGame[0][0].equals("+")) {
+                iniGame[0][0] = "x";
+                break;
+            } else if (place == 8 && iniGame[0][1].equals("+")) {
+                iniGame[0][1] = "x";
+                break;
+            } else if (place == 9 && iniGame[0][2].equals("+")) {
+                iniGame[0][2] = "x";
+                break;
+            } else if (place == 4 && iniGame[1][0].equals("+")) {
+                iniGame[1][0] = "x";
+                break;
+            } else if (place == 5 && iniGame[1][1].equals("+")) {
+                iniGame[1][1] = "x";
+                break;
+            } else if (place == 6 && iniGame[1][2].equals("+")) {
+                iniGame[1][2] = "x";
+                break;
+            } else if (place == 1 && iniGame[2][0].equals("+")) {
+                iniGame[2][0] = "x";
+                break;
+            } else if (place == 2 && iniGame[2][1].equals("+")) {
+                iniGame[2][1] = "x";
+                break;
+            } else if (place == 3 && iniGame[2][2].equals("+")) {
+                iniGame[2][2] = "x";
+                break;
+            }
+            System.out.println("your choice not correct try again");
+        }
+        return iniGame;
+    }
+
+    public static boolean getCheckPlayerWin() {
+        String[][]list = iniGame;
+        if (list[0][0].equals("x") && list[0][1].equals("x") && list[0][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][0].equals("o") && list[0][1].equals("o") && list[0][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[1][0].equals("x") && list[1][1].equals("x") && list[1][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[1][0].equals("o") && list[1][1].equals("o") && list[1][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[2][0].equals("x") && list[2][1].equals("x") && list[2][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[2][0].equals("o") && list[2][1].equals("o") && list[2][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][0].equals("x") && list[1][0].equals("x") && list[2][0].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][0].equals("o") && list[1][0].equals("o") && list[2][0].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][1].equals("x") && list[1][1].equals("x") && list[2][1].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][1].equals("o") && list[1][1].equals("o") && list[2][1].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][2].equals("x") && list[1][2].equals("x") && list[2][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][2].equals("o") && list[1][2].equals("o") && list[2][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][0].equals("x") && list[1][1].equals("x") && list[2][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][0].equals("o") && list[1][1].equals("o") && list[2][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][2].equals("x") && list[1][1].equals("x") && list[2][0].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][2].equals("o") && list[1][1].equals("o") && list[2][0].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else {
+            return false;
+            //.out.println("Draw 😒");
+
+        }
+    }
+}
