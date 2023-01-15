@@ -1,0 +1,312 @@
+//EX7
+      try{
+        boolean start = true;
+        int selectnum = 0;
+        int arraySize = 0;
+        String ss = "";
+
+        System.out.println("Enter Array size");
+
+        arraySize = s.nextInt();
+        //ArrayList<Integer>array=new ArrayList<Integer>();
+        int[] array = new int[arraySize];
+        while (start) {
+
+
+            System.out.println("select number:\n 1: feed your arry\n 2: print array\n 3: search in your arry\n 4: close");
+            selectnum = s.nextInt();
+            if(selectnum >0 && selectnum <5) {
+                if (selectnum == 1) {
+                    //add number to array
+                    for (int i = 0; i < arraySize; i++) {
+                        System.out.println("Enter numbers to add it in array");
+                        int enter = s.nextInt();
+                        array[i] = enter;
+                    }
+                } else if (selectnum == 2) {
+                    // print;
+                    System.out.print("your array: ");
+                    for (int i : array) {
+                        System.out.print(i);
+                    }
+                    System.out.println();
+                } else if (selectnum == 3) {
+                    //search
+                    System.out.println("serch by enter number");
+                    int num = s.nextInt();
+                    //String ss = "";
+                    for (int a = 0; a < array.length; a++) {
+
+                        if (num == array[a]) {
+
+                            ss = "it's exist:" + array[a];
+                            break;
+                        } else {
+                            throw new IndexOutOfBoundsException();
+                        }
+
+                    }
+                    System.out.println(ss);
+
+                } else if (selectnum == 4) {
+                    break;
+                }
+            }else {
+                throw new Exception();
+            }
+        }
+        }catch (InputMismatchException e){
+            System.out.println("Your enter is wrong: "+e.toString());
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("this index not exisit: "+e.toString());
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
+        
+        
+        
+        
+        //Project 1
+        
+        import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static String[][] iniGame = setEmptyList();
+    public static Scanner s = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        try {
+            getStartGame();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("please Enter number between 0-9"+ e.toString());
+        }
+
+        catch (InputMismatchException e){
+            System.out.println("please Enter number between 0-9"+e.toString());
+        }
+        catch (Exception e){
+            System.out.println("please Enter number between 0-9"+e.toString());
+        }
+
+    }
+
+    public static void getStartGame() throws IndexOutOfBoundsException,InputMismatchException,Exception {
+        System.out.println(" 7 | 8 | 9 ");
+        System.out.println(" 4 | 5 | 6 ");
+        System.out.println(" 1 | 2 | 3 ");
+        System.out.println("###########");
+        for (int i = 1; i < 5; i++) {
+            if (!getCheckPlayerWin()) {
+
+                    setO();
+                    pint_bord();
+                    if (getCheckPlayerWin()) {
+                        System.out.println("Game Over Player X");
+                        break;
+                    }
+
+
+                setX();
+                pint_bord();
+                if (getCheckPlayerWin()) {
+                    System.out.println("Game Over Boot");
+                    break;
+                }
+            }
+        }
+        if (!getCheckPlayerWin()) {
+            System.out.println("Draw");
+        }
+    }
+
+
+    public static String[][] setEmptyList() {
+        String[][] list = new String[3][3];
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list.length; j++) {
+                list[i][j] = "+";
+            }
+        }
+        return list;
+    }
+
+    /*
+    StringBuilder sb = new StringBuilder();
+    str = sb.append(str1).append(str2).append(str3).toString();
+     */
+    public static void pint_bord() {
+        String[][] list = iniGame;
+        for (int i = 0; i < list.length; i++) {
+
+            for (int j = 0; j < list.length; j++) {
+                System.out.print(list[i][j]);
+                if (j == 0 || j == 1) {
+                    System.out.print(" | ");
+                }
+                if (i == 0 && j == 2) {
+                    System.out.print("\n‾‾‾‾‾‾‾‾‾\n");
+                } else if (i == 1 && j == 2) {
+                    System.out.print("\n‾‾‾‾‾‾‾‾‾\n");
+                }
+            }
+        }
+        System.out.println("\n⫼⫼⫼⫼⫼⫼⫼⫼⫼⫼⫼\n");
+    }
+
+    public static void setO() {
+        Random random = new Random();
+        while (true) {
+
+            int place = random.nextInt(9);
+            //int place = s.nextInt();
+            if (place == 7 && iniGame[0][0].equals("+")) {
+                iniGame[0][0] = "o";
+                break;
+            } else if (place == 8 && iniGame[0][1].equals("+")) {
+                iniGame[0][1] = "o";
+                break;
+            } else if (place == 9 && iniGame[0][2].equals("+")) {
+                iniGame[0][2] = "x";
+                break;
+            } else if (place == 4 && iniGame[1][0].equals("+")) {
+                iniGame[1][0] = "o";
+                break;
+            } else if (place == 5 && iniGame[1][1].equals("+")) {
+                iniGame[1][1] = "o";
+                break;
+            } else if (place == 6 && iniGame[1][2].equals("+")) {
+                iniGame[1][2] = "o";
+                break;
+            } else if (place == 1 && iniGame[2][0].equals("+")) {
+                iniGame[2][0] = "o";
+                break;
+            } else if (place == 2 && iniGame[2][1].equals("+")) {
+                iniGame[2][1] = "o";
+                break;
+            } else if (place == 3 && iniGame[2][2].equals("+")) {
+                iniGame[2][2] = "o";
+                break;
+            }
+        }
+
+    }
+
+    public static String[][] setX() throws IndexOutOfBoundsException {
+        System.out.println("Your turn");
+        System.out.println("chose number to play\n");
+        while (true) {
+            int place = s.nextInt();
+            if (place >= 0 && place <= 9) {
+                if (place == 7 && iniGame[0][0].equals("+")) {
+                    iniGame[0][0] = "x";
+                    break;
+                } else if (place == 8 && iniGame[0][1].equals("+")) {
+                    iniGame[0][1] = "x";
+                    break;
+                } else if (place == 9 && iniGame[0][2].equals("+")) {
+                    iniGame[0][2] = "x";
+                    break;
+                } else if (place == 4 && iniGame[1][0].equals("+")) {
+                    iniGame[1][0] = "x";
+                    break;
+                } else if (place == 5 && iniGame[1][1].equals("+")) {
+                    iniGame[1][1] = "x";
+                    break;
+                } else if (place == 6 && iniGame[1][2].equals("+")) {
+                    iniGame[1][2] = "x";
+                    break;
+                } else if (place == 1 && iniGame[2][0].equals("+")) {
+                    iniGame[2][0] = "x";
+                    break;
+                } else if (place == 2 && iniGame[2][1].equals("+")) {
+                    iniGame[2][1] = "x";
+                    break;
+                } else if (place == 3 && iniGame[2][2].equals("+")) {
+                    iniGame[2][2] = "x";
+                    break;
+                }
+                System.out.println("your choice not correct try again");
+            } else {
+                throw new IndexOutOfBoundsException();
+            }
+
+
+        }
+        return iniGame;
+    }
+
+    public static boolean getCheckPlayerWin() {
+        String[][] list = iniGame;
+        if (list[0][0].equals("x") && list[0][1].equals("x") && list[0][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][0].equals("o") && list[0][1].equals("o") && list[0][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[1][0].equals("x") && list[1][1].equals("x") && list[1][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[1][0].equals("o") && list[1][1].equals("o") && list[1][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[2][0].equals("x") && list[2][1].equals("x") && list[2][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[2][0].equals("o") && list[2][1].equals("o") && list[2][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][0].equals("x") && list[1][0].equals("x") && list[2][0].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][0].equals("o") && list[1][0].equals("o") && list[2][0].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][1].equals("x") && list[1][1].equals("x") && list[2][1].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][1].equals("o") && list[1][1].equals("o") && list[2][1].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][2].equals("x") && list[1][2].equals("x") && list[2][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][2].equals("o") && list[1][2].equals("o") && list[2][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][0].equals("x") && list[1][1].equals("x") && list[2][2].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][0].equals("o") && list[1][1].equals("o") && list[2][2].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else if (list[0][2].equals("x") && list[1][1].equals("x") && list[2][0].equals("x")) {
+            System.out.println("\n🎇🎉✨\nPlayer X win");
+            return true;
+
+        } else if (list[0][2].equals("o") && list[1][1].equals("o") && list[2][0].equals("o")) {
+            System.out.println("\n🎇🎉✨\nPlayer O win");
+            return true;
+
+        } else {
+            return false;
+
+        }
+    }
+}
