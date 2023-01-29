@@ -65,7 +65,7 @@ public class UserController {
         if (userService.isUserCanAddStock(userid,productid,merchantid,stock)) {
             return ResponseEntity.status(200).body("added to merchant Stock");
         }
-        return ResponseEntity.status(400).body("something wrong try again");
+        return ResponseEntity.status(400).body("Check entered data and try again");
     }
 
 //============================================================================
@@ -75,7 +75,7 @@ public class UserController {
         if (userService.isUserCanBuyProduct(userid,productid,merchantid)) {
             return ResponseEntity.status(200).body("You have purchased the product");
         }
-        return ResponseEntity.status(400).body("something wrong try again");
+        return ResponseEntity.status(400).body("Check entered data and try again");
     }
 
 
