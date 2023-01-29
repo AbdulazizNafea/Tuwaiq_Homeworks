@@ -1,0 +1,57 @@
+###############Product
+id ( must not be empty , have to be 3 character long ).
+name ( must not be empty , have to be 3 length long ).
+price ( must not be empty , must be positive number ).
+categoryID ( must not be empty , have to be 3 character long ).
+=====================================================
+
+############Category Class :
+
+id ( must not be empty , have to be 3 character long ).
+name ( must not be empty , have to be 3 length long ).
+
+========================================================
+
+############Merchant Class :
+
+id ( must not be empty , have to be 3 character long ).
+name ( must not be empty , have to be 3 length long ).
+
+========================================================
+
+                MerchantStock Class :
+
+id ( must not be empty , have to be 3 character long ).
+productid ( must not be empty , have to be 3 character long ).
+merchantid ( must not be empty , have to be 3 length long ).
+stock ( must not be empty , have to be more than 10 at start ).
+
+=========================================================
+
+            User Class :
+
+id ( must not be empty , have to be 3 character long ).
+username ( must not be empty , have to be 5 length long ).
+password ( must not be empty , have to be 6 length long , must have characters and digits ).
+email ( must not be empty , must be valid email ).
+role ( must not be empty , have to be in ( “Admin”,”Customer”) ).
+balance ( must not be empty , have to be positive ).
+=========================================================
+
+Create endpoint where user can buy a product directly
+
+this endpoint should accept userid , product id , merchantid.
+
+check if all the given id is valid or not
+
+check if the merchant have the product in stock or return bad request.
+
+reduce the stock from the MerchantStock.
+
+if balance is less than the product price return bad request.
+
+deducted the price of the product from the user balance.
+
+///////////////////////////////////////////////////////////////
+
+All Done 100% !!
