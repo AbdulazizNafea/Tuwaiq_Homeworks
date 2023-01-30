@@ -20,7 +20,7 @@ full_name varchar(20) not null,
 email varchar(20) unique,
 gender char(1) check (gender='m' or gender= 'f'),
 date_of_birth varchar(15),
-created_at datetime,
+created_at datetime DEFAULT CURRENT_TIMESTAMP(),
 country_code int,
 foreign key(country_code) references countries(code)
 );
@@ -34,16 +34,17 @@ create table orders(
   id int primary key ,
   user_id int,foreign key (user_id) references users(id),
   status_ varchar(6) check ( status_='start' or status_='finish'),
-  created_at datetime
+  created_at datetime DEFAULT CURRENT_TIMESTAMP()
 );
-INSERT INTO orders(id, user_id, status_) VALUES (5,1,'start',curdate());
+# ALTER TABLE orders MODIFY created_at datetime DEFAULT CURRENT_TIMESTAMP();
+INSERT INTO orders(id, user_id, status_) VALUES (1,1,'start');
 select * from orders;
 
 
 
 create table order_products(
-    order_id int primary key ,
-    product_id int, foreign key (product_id) references orders(id),
+    order_id int,   foreign key (order_id) references  orders(id),
+    product_id int, foreign key (product_id) references products(id),
     quantity int default 0
 );
 INSERT INTO order_products(order_id, product_id) VALUES (1,1);
@@ -57,10 +58,11 @@ create table products(
   name varchar(10) not null ,
   price int default 0,
   status varchar(10) check ( status='valid' or status='expired' ),
-  created_at datetime default CURRENT_TIMESTAMP
+  created_at datetime DEFAULT CURRENT_TIMESTAMP()
 );
-INSERT INTO products(id, name, price, status, created_at) VALUES (2,'test',10,'valid',curdate());
+INSERT INTO products(id, name, price, status, created_at) VALUES (1,'test',10,'valid',curdate());
 select * from products;
 DELETE FROM products WHERE id = 2;
+
 
 
