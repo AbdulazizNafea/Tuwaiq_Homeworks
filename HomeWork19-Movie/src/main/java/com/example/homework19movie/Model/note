@@ -1,0 +1,57 @@
+1-
+ID :
+Cannot be null
+
+Length more than 3
+
+name :
+Cannot be null
+
+Length more than 2
+
+genre :
+Cannot be null
+
+Validation (Drama|Action|Comedy)
+
+rating :
+Cannot be null
+
+I must be between 1 - 5
+
+duration :
+Cannot be null
+
+It must be more than 60
+
+----------
+2-
+ID :
+Cannot be null
+
+Length more than 3
+
+name :
+Cannot be null
+
+Length more than 2
+------------------------
+3-
+Movie CRUD
+------------------------
+4-
+Director CRUD
+------------------------
+5-
+Create endpoint that search for a specific movie by title
+-------------
+6-
+Create endpoint that takes movie name and return the duration of the movie
+-------------------
+7- Create endpoint that takes movie name and return the director name
+----------------------
+8-Create endpoint that takes movie name and return the rate of the movie
+------------------------
+9-Create endpoint that returns all movies above that rate
+-----------------------------
+10-Create endpoint that returns all movies by a specific genre
