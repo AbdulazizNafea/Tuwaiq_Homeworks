@@ -1,0 +1,9 @@
+==Create endpoint that takes teacher id and return All teacher details
+
+==Create endpoint that take course id and return the teacher name for that class
+
+Create endpoint that takes student id and major and change the
+student major ( changing the major will drop all the cousres that the student attended to )
+
+
+Create endpoint that takes course id and return the student list
