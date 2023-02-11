@@ -1,0 +1,8 @@
+One To One
+Store - location -> done
+
+One To Many
+Store - Book -> done
+
+Many to Many
+Store - Customer -> done
