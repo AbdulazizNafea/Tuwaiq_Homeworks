@@ -2,7 +2,6 @@ package com.example.project5.Service;
 
 import com.example.project5.ApiException.ApiException;
 import com.example.project5.DTO.LocationDto;
-import com.example.project5.Model.Customer;
 import com.example.project5.Model.Location;
 import com.example.project5.Model.Store;
 import com.example.project5.Repository.LocationRepository;
@@ -23,21 +22,19 @@ public class LocationServices {
     public List<Location> getAll() {
         return locationRepository.findAll();
     }
-    public void add2(Location location){
-        locationRepository.save(location);
-    }
 
-    public void add (LocationDto LD){
+
+    public void add(LocationDto LD) {
         Store store = storeRepository.findStoreById(LD.getStore_id());
         if (store == null) {
             throw new ApiException("Store id not found");
         }
-        Location location = new Location(null,LD.getArea(),LD.getStreet(),store);
+        Location location = new Location(null, LD.getArea(), LD.getStreet(), store);
         locationRepository.save(location);
     }
     ////////////////////////////
 
-    public void update(LocationDto ld){
+    public void update(LocationDto ld) {
         Location newLocation = locationRepository.findLocationById(ld.getStore_id());
         if (newLocation == null) {
             throw new ApiException("location ID not found");
@@ -47,15 +44,16 @@ public class LocationServices {
         locationRepository.save(newLocation);
     }
 
-        public void delete(Integer id){
+    /////////////////////////////////////////////////////////
+    public void delete(Integer id) {
+
         Location location = locationRepository.findByIdEquals(id);
+        Store store = storeRepository.findStoreById(location.getStore().getId());
         if (location == null) {
             throw new ApiException("location ID not found");
         }
+        store.setLocation(null);
+        storeRepository.save(store);
         locationRepository.delete(location);
-
     }
-    /////////////////////////////////////////////////////////
-
-
 }
